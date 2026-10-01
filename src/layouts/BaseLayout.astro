@@ -1,0 +1,92 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { Locale, Translations } from '../i18n/types';
+import { siteConfig } from '../data/config';
+import '../styles/global.css';
+
+interface Props {
+  t: Translations;
+  locale: Locale;
+}
+
+const { t, locale } = Astro.props;
+const siteUrl = siteConfig.siteUrl.replace(/\/$/, '');
+const canonicalUrl = `${siteUrl}/${locale}`;
+const ruUrl = `${siteUrl}/ru`;
+const enUrl = `${siteUrl}/en`;
+---
+
+<!doctype html>
+<html lang={locale} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)" />
+
+    <!-- Favicon placeholder -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- SEO Meta Tags -->
+    <title>{t.seo.title}</title>
+    <meta name="description" content={t.seo.description} />
+    <meta name="author" content={t.header.name} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical & Alternate Hreflang Tags -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="ru" href={ruUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={ruUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={t.seo.title} />
+    <meta property="og:description" content={t.seo.description} />
+    <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
+    <meta property="og:site_name" content={`${t.header.name} — QA Engineer`} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={t.seo.title} />
+    <meta name="twitter:description" content={t.seo.description} />
+
+    <!-- Dark Mode Init Script (prevents FOUT) -->
+    <script is:inline>
+      (function () {
+        try {
+          const stored = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-[#fcfcfd] text-slate-900 transition-colors duration-200 dark:bg-[#0b0f19] dark:text-slate-100 flex flex-col font-sans antialiased">
+    <!-- Skip to main content for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 rounded-md bg-brand-600 px-4 py-2 text-white font-semibold shadow-lg focus:outline-none"
+    >
+      {locale === 'ru' ? 'Перейти к основному содержимому' : 'Skip to main content'}
+    </a>
+
+    <!-- Global Header -->
+    <Header t={t} locale={locale} />
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <Footer t={t} />
+  </body>
+</html>
