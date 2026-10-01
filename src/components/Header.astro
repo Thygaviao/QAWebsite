@@ -252,15 +252,14 @@ const currentCv = siteConfig.cv[locale];
     });
   }
 
-  // Language switcher preserve hash
+  // Language switcher: navigate cleanly to target language at the very top of the page
   const langLinks = document.querySelectorAll('.lang-link');
   langLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
-      const hash = window.location.hash;
-      if (hash) {
-        e.preventDefault();
-        const base = link.getAttribute('href');
-        window.location.href = base + hash;
+      e.preventDefault();
+      const target = link.getAttribute('href');
+      if (target) {
+        window.location.href = target;
       }
     });
   });

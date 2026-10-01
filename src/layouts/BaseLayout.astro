@@ -69,7 +69,10 @@ const enUrl = `${siteUrl}/en`;
       })();
     </script>
   </head>
-  <body class="min-h-screen bg-[#fcfcfd] text-slate-900 transition-colors duration-200 dark:bg-[#0b0f19] dark:text-slate-100 flex flex-col font-sans antialiased">
+  <body class="min-h-screen bg-[#fcfcfd] text-slate-900 transition-colors duration-200 dark:bg-[#0b0f19] dark:text-slate-100 flex flex-col font-sans antialiased relative">
+    <!-- Top target for scroll-to-top -->
+    <div id="top" class="absolute top-0 left-0 h-0 w-0 pointer-events-none" aria-hidden="true"></div>
+
     <!-- Skip to main content for accessibility -->
     <a
       href="#main-content"
@@ -82,11 +85,18 @@ const enUrl = `${siteUrl}/en`;
     <Header t={t} locale={locale} />
 
     <!-- Main Content Area -->
-    <main id="main-content" class="flex-grow">
+    <main id="main-content" class="flex-grow scroll-mt-20">
       <slot />
     </main>
 
     <!-- Global Footer -->
     <Footer t={t} />
+
+    <script is:inline>
+      // Ensure landing at the very top on navigation without hash
+      if (!window.location.hash && window.scrollY > 0) {
+        window.scrollTo(0, 0);
+      }
+    </script>
   </body>
 </html>

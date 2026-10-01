@@ -24,8 +24,9 @@ const currentYear = new Date().getFullYear();
       <div class="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400">
         <span>© {currentYear} {t.footer.name}.</span>
         <a
-          href="#main-content"
-          class="font-medium hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1"
+          href="#top"
+          id="back-to-top"
+          class="font-medium hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1 cursor-pointer"
         >
           <span>{t.footer.backToTop}</span>
           <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -35,4 +36,17 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
   </div>
+
+  <script is:inline>
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.location.hash) {
+          history.pushState(null, '', window.location.pathname);
+        }
+      });
+    }
+  </script>
 </footer>
