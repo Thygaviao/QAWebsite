@@ -28,8 +28,7 @@ export const siteConfig: SiteConfig = {
     },
     en: {
       path: '/cv/kirill-burchikov-cv-en.pdf',
-      // If the English CV does not exist yet, set to false to gracefully disable or indicate "Available on request"
-      available: false,
+      available: true,
     },
   },
 };
