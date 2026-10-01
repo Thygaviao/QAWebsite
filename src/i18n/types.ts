@@ -56,6 +56,7 @@ export interface Translations {
   };
   hero: {
     greetingBadge: string;
+    openToWorkStatus: string;
     name: string;
     title: string;
     subtitle: string;

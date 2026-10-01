@@ -21,12 +21,13 @@ export const en: Translations = {
     languageToggleAria: 'Switch language to Russian',
   },
   hero: {
-    greetingBadge: '6+ Years Experience • Web / Mobile / API / Automation',
+    greetingBadge: '6+ Years Experience',
+    openToWorkStatus: 'Open to remote QA opportunities',
     name: 'Kirill Burchikov',
     title: 'QA Engineer',
     subtitle: 'Web / Mobile / API / Automation',
     descriptionParagraphs: [
-      'QA Engineer with 6+ years of commercial experience in web, mobile, API and integration testing.',
+      '6+ years of commercial experience in web, mobile, API and integration testing.',
       'Strong technical background in REST/SOAP APIs, SQL, Kafka, logs, CI/CD and test automation.',
       'Commercial Kotlin automation experience with backend and Android automated tests, internal test frameworks and Custom DSL.',
     ],
@@ -71,10 +72,10 @@ export const en: Translations = {
   about: {
     sectionTitle: 'About',
     paragraphs: [
-      'My background combines functional, regression and integration testing with a strong technical foundation in REST/SOAP APIs, SQL, Kafka, logs, CI and test automation.',
-      'I have commercial automation experience with Kotlin, including backend and Android automated tests, internal test frameworks and a custom DSL.',
-      'I use AI agents and LLM tools in daily work for codebase analysis, debugging, repetitive changes and test refactoring.',
-      'I prefer practical QA: understanding the system as a whole, finding root causes and automating where it provides measurable value.',
+      'QA professional with 6+ years of commercial experience testing web, mobile and integration systems with a strong technical foundation in REST/SOAP, SQL, Kafka, logs and CI.',
+      'Commercial Kotlin automation background spanning backend and Android automated test suites, internal framework support and a custom DSL.',
+      'Active daily use of AI agents and LLM tooling for codebase exploration, defect investigation and test refactoring.',
+      'I focus on pragmatic QA: understanding the system end-to-end, isolating root causes quickly and automating where it delivers measurable feedback speed.',
     ],
     keyHighlightsTitle: 'Engineering Focus',
     keyHighlights: [
@@ -152,7 +153,7 @@ export const en: Translations = {
           '<strong>Introduced JMeter</strong> for performance and load testing.',
           '<strong>Established QA processes with support team</strong> and created an internal product knowledge base.',
           '<strong>Tested ~5 external integrations</strong> with banking and security partner systems.',
-          '<strong>Technical interviews</strong>: regularly interviewed and evaluated incoming QA candidates.',
+          '<strong>Technical interviews</strong>: regularly conducted technical interviews for QA candidates and participated in technical assessment.',
         ],
         responsibilities: [
           'Functional, regression and integration testing of web and mobile applications.',
@@ -200,7 +201,7 @@ export const en: Translations = {
       {
         title: 'Web Automation Coverage',
         problem: 'Web regression automation coverage was approximately 80%.',
-        work: 'Expanded and maintained the automated regression suite.',
+        work: 'Expanded and updated the automated regression suite, covered missing key user flows and prepared the suite for handoff to the responsible team.',
         result: 'Coverage increased to approximately 95% within 2–3 months.',
       },
       {
