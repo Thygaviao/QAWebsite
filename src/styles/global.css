@@ -31,14 +31,11 @@
   }
 
   /* Reset lists completely to prevent double bullets across all browsers */
-  ul, ol {
-    list-style: none;
+  ul, ol, li {
+    list-style: none !important;
+    list-style-type: none !important;
     margin: 0;
     padding: 0;
-  }
-
-  li {
-    list-style: none;
   }
 
   /* Accessibility focus ring */

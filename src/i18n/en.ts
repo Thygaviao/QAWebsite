@@ -27,9 +27,7 @@ export const en: Translations = {
     title: 'QA Engineer',
     subtitle: 'Web / Mobile / API / Automation',
     descriptionParagraphs: [
-      '6+ years of commercial experience in web, mobile, API and integration testing.',
-      'Strong technical background in REST/SOAP APIs, SQL, Kafka, logs, CI/CD and test automation.',
-      'Commercial Kotlin automation experience with backend and Android automated tests, internal test frameworks and Custom DSL.',
+      'QA Engineer with 6+ years of commercial experience in Web, Mobile (Android), API, and integration testing. Commercial Kotlin automation background, hands-on SQL, Kafka, log diagnostics, and practical AI-agent workflows.',
     ],
     cta: {
       viewExperience: 'Work Experience',
@@ -72,19 +70,10 @@ export const en: Translations = {
   about: {
     sectionTitle: 'About',
     paragraphs: [
-      'QA professional with 6+ years of commercial experience testing web, mobile and integration systems with a strong technical foundation in REST/SOAP, SQL, Kafka, logs and CI.',
-      'Commercial Kotlin automation background spanning backend and Android automated test suites, internal framework support and a custom DSL.',
-      'Active daily use of AI agents and LLM tooling for codebase exploration, defect investigation and test refactoring.',
-      'I focus on pragmatic QA: understanding the system end-to-end, isolating root causes quickly and automating where it delivers measurable feedback speed.',
+      'Quality Engineer with 6+ years of commercial experience in product and fintech teams. Specializing in web, mobile (Android), and integration testing, fast root-cause isolation via logs and SQL, Kotlin test automation, and pragmatic workflow acceleration using AI agents.',
     ],
     keyHighlightsTitle: 'Engineering Focus',
-    keyHighlights: [
-      'Web, Mobile (Android), REST/SOAP APIs',
-      'Kotlin backend & Android automation',
-      'In-depth diagnostics via logs and SQL',
-      'Complex external systems & integrations',
-      'Practical AI-agent adoption in QA workflows',
-    ],
+    keyHighlights: [],
   },
   experience: {
     sectionTitle: 'Experience',
@@ -109,17 +98,10 @@ export const en: Translations = {
         ],
         responsibilities: [
           'Functional, regression, integration and acceptance testing of web and Android applications.',
-          'REST/SOAP API testing.',
-          'SQL.',
-          'Kafka and integration testing.',
-          'Backend and Android automation using Kotlin.',
-          'Internal test framework and Custom DSL.',
-          'Test failure analysis.',
-          'Test refactoring and maintenance.',
-          'Java test stub maintenance.',
-          'Log analysis and defect investigation using Kibana.',
-          'Jenkins and test environment support.',
-          'AI-assisted codebase analysis, debugging and test refactoring.',
+          'REST/SOAP API, SQL, Kafka and integration testing.',
+          'Backend and Android automation in Kotlin using internal framework and Custom DSL.',
+          'Test failure analysis, refactoring, Java stubs and Kibana diagnostics.',
+          'Jenkins, test environments and AI-assisted codebase/test analysis.',
         ],
         tech: [
           'Kotlin',
@@ -156,18 +138,11 @@ export const en: Translations = {
           '<strong>Technical interviews</strong>: regularly conducted technical interviews for QA candidates and participated in technical assessment.',
         ],
         responsibilities: [
-          'Functional, regression and integration testing of web and mobile applications.',
-          'Requirements analysis.',
-          'REST API and integration testing.',
-          'MySQL.',
-          'PostgreSQL.',
-          'Kafka.',
-          'Jenkins.',
-          'Docker.',
-          'Test environment support.',
-          'Selenium UI automation.',
-          'JMeter performance testing.',
-          'Communication with customers and support teams.',
+          'Functional, regression and integration testing of web and mobile applications, requirements analysis and test design.',
+          'REST API testing, Kafka message verification and database querying (MySQL, PostgreSQL).',
+          'UI automation with Selenium and performance testing with JMeter.',
+          'Test environment deployment and support using Docker and Jenkins.',
+          'Collaboration with stakeholders and support team, triaging customer-reported issues.',
         ],
         tech: [
           'REST API',
@@ -189,13 +164,13 @@ export const en: Translations = {
   cases: {
     sectionTitle: 'Selected Engineering Cases',
     problemLabel: 'Problem',
-    solutionLabel: 'Engineering Work',
+    solutionLabel: 'What was done',
     resultLabel: 'Result',
     items: [
       {
         title: 'Android Regression Optimization',
         problem: 'Full Android regression execution took around 3–4 hours.',
-        work: 'Refactored automated tests, improved test-data preparation, updated SDK-related flows and optimized external transitions using Deep Links, Intent interception and controlled test states.',
+        work: 'Refactored automated tests, improved test-data preparation, adapted scenarios for SDK changes, and replaced external transitions with Deep Links, Intent interception, and controlled test states.',
         result: 'Regression execution time reduced to approximately 50–90 minutes.',
       },
       {
