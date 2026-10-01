@@ -21,5 +21,6 @@ dist/
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
 *.sw?
+~$*
+*.tmp
