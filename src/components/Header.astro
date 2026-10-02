@@ -9,6 +9,7 @@ interface Props {
 
 const { t, locale } = Astro.props;
 const currentCv = siteConfig.cv[locale];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <header
@@ -18,7 +19,7 @@ const currentCv = siteConfig.cv[locale];
   <div class="mx-auto flex h-14 max-w-content items-center justify-between px-4 sm:px-6 lg:px-8">
     <!-- Brand / Name -->
     <a
-      href={`/${locale}`}
+      href={`${base}/${locale}`}
       class="group flex items-center gap-2.5 text-slate-900 transition-colors dark:text-slate-100"
       aria-label={`${t.header.name} — ${t.header.role}`}
     >
@@ -62,7 +63,7 @@ const currentCv = siteConfig.cv[locale];
         aria-label="Language selection"
       >
         <a
-          href="/ru"
+          href={`${base}/ru`}
           data-lang="ru"
           class={`lang-link px-2.5 py-1 rounded transition-colors ${
             locale === 'ru'
@@ -76,7 +77,7 @@ const currentCv = siteConfig.cv[locale];
         </a>
         <span class="text-slate-300 dark:text-slate-700 px-0.5" aria-hidden="true">/</span>
         <a
-          href="/en"
+          href={`${base}/en`}
           data-lang="en"
           class={`lang-link px-2.5 py-1 rounded transition-colors ${
             locale === 'en'
@@ -204,7 +205,7 @@ const currentCv = siteConfig.cv[locale];
       {
         currentCv.available && (
           <a
-            href={currentCv.path}
+            href={`${base}${currentCv.path}`}
             download
             class="inline-flex items-center gap-1.5 rounded-md bg-slate-900 px-3 py-1.5 text-white dark:bg-brand-500 dark:text-slate-950 font-semibold"
           >

@@ -11,6 +11,7 @@ interface Props {
 
 const { t, locale } = Astro.props;
 const currentCv = siteConfig.cv[locale];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // Check if CV file exists on disk
 const cvFileExists = fs.existsSync(path.join(process.cwd(), 'public', currentCv.path));
@@ -64,7 +65,7 @@ const hasProfilePhoto = fs.existsSync(path.join(process.cwd(), 'public', profile
           {
             cvFileExists && (
               <a
-                href={currentCv.path}
+                href={`${base}${currentCv.path}`}
                 download
                 class="inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-xs transition-all hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 dark:bg-brand-500 dark:text-slate-950 dark:hover:bg-brand-400 dark:focus-visible:outline-brand-400"
               >
@@ -143,7 +144,7 @@ const hasProfilePhoto = fs.existsSync(path.join(process.cwd(), 'public', profile
           <div class="shrink-0 self-start">
             <div class="relative h-28 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 rounded-2xl border border-slate-200/80 p-1 dark:border-slate-800 shadow-2xs overflow-hidden bg-slate-100 dark:bg-slate-900">
               <img
-                src={profilePhotoPath}
+                src={`${base}${profilePhotoPath}`}
                 alt={t.hero.name}
                 width="144"
                 height="144"

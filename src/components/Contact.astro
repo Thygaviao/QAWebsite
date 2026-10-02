@@ -11,6 +11,7 @@ interface Props {
 
 const { t, locale } = Astro.props;
 const currentCv = siteConfig.cv[locale];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // Check if CV file exists on disk
 const cvFileExists = fs.existsSync(path.join(process.cwd(), 'public', currentCv.path));
@@ -81,7 +82,7 @@ const cvFileExists = fs.existsSync(path.join(process.cwd(), 'public', currentCv.
         {
           cvFileExists && (
             <a
-              href={currentCv.path}
+              href={`${base}${currentCv.path}`}
               download
               class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-xs transition-all hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800"
             >

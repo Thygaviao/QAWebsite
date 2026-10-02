@@ -1,5 +1,7 @@
 ---
 // Root redirect to /ru (Russian is default and primary)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const ruPath = `${base}/ru/`;
 ---
 
 <!doctype html>
@@ -7,15 +9,14 @@
   <head>
     <meta charset="utf-8" />
     <title>Кирилл Бурчиков — QA Engineer</title>
-    <meta http-equiv="refresh" content="0; url=/ru" />
-    <link rel="canonical" href="https://burchikov.qa/ru" />
-    <script is:inline>
-      window.location.replace('/ru');
+    <meta http-equiv="refresh" content={`0; url=${ruPath}`} />
+    <script is:inline define:vars={{ ruPath }}>
+      window.location.replace(ruPath);
     </script>
   </head>
   <body class="bg-[#fcfcfd] dark:bg-[#0b0f19]">
     <p class="p-4 text-sm text-slate-500">
-      Redirecting to <a href="/ru" class="underline text-brand-600">/ru</a>...
+      Redirecting to <a href={ruPath} class="underline text-brand-600">{ruPath}</a>...
     </p>
   </body>
 </html>

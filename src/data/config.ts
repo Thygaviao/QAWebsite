@@ -16,7 +16,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  siteUrl: 'https://burchikov.qa',
+  siteUrl: 'https://kirillburchikov.pages.dev',
   telegramUrl: 'https://t.me/nekerill1337',
   email: 'thygaviao@yandex.ru',
   // Configurable LinkedIn profile URL. Replace with your exact LinkedIn vanity handle if different:
